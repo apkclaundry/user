@@ -367,6 +367,35 @@ body {
   color: #a71d2a; /* Merah lebih gelap saat hover */
 }
 
+/* Menyesuaikan lebar input di dalam popup */
+.swal2-popup {
+  max-width: 100%; /* Memastikan popup tidak melebihi lebar layar */
+  width: auto; /* Menyesuaikan dengan konten */
+  padding: 20px; /* Memberikan padding agar konten tidak terlalu rapat */
+  overflow-x: hidden; /* Menyembunyikan scroll bar horizontal */
+  box-sizing: border-box; /* Memastikan padding masuk dalam lebar */
+}
+
+/* Memperkecil lebar input box agar tidak melebihi lebar popup */
+.swal2-input {
+  width: 80%; /* Menyesuaikan lebar input box, 80% dari lebar popup */
+  margin: 10px 0; /* Memberikan jarak antar input box */
+  box-sizing: border-box; /* Memastikan padding masuk dalam lebar */
+}
+
+/* Menyesuaikan label dan div */
+.swal2-html-container label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Memperbesar ruang antar elemen */
+.swal2-html-container div {
+  margin-bottom: 12px;
+}
+
+
+
   
   /* Responsif: Ubah tabel menjadi tampilan list pada layar kecil */
   @media screen and (max-width: 768px) {
