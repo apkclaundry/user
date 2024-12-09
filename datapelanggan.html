@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laundry POS - Input Pesanan</title>
+    <link rel="stylesheet" href="src/css/data.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="src/img/logo.png" alt="Logo Laundry POS" />
+          <h1>Laundry POS</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="datapelanggan.html">Data Pelanggan</a></li>
+            <li><a href="karyawan.html">Karyawan</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="laporan.html">Laporan</a></li>
+          </ul>
+          <button class="burger" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Formulir Data Pelanggan -->
+      <form id="customer-form">
+        <div class="form-group">
+          <label for="customer-id">ID Pelanggan</label>
+          <input
+            type="text"
+            id="customer-id"
+            name="customer_id"
+            placeholder="ID unik pelanggan"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="customer-name">Nama Pelanggan</label>
+          <input
+            type="text"
+            id="customer-name"
+            name="customer_name"
+            placeholder="Masukkan nama pelanggan"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="customer-phone">Nomor Telepon</label>
+          <input
+            type="tel"
+            id="customer-phone"
+            name="customer_phone"
+            placeholder="08xxxxxxxxxx"
+            pattern="[0-9]{10,13}"
+            title="Masukkan nomor telepon yang valid (10-13 digit angka)"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="customer-address">Alamat</label>
+          <input
+          id="customer-address"
+          name="customer_address"
+          placeholder="Masukkan alamat pelanggan"
+          required
+        />
+        </div>
+        <div class="form-group">
+          <label for="customer-email">Email</label>
+          <input
+            type="email"
+            id="customer-email"
+            name="customer_email"
+            placeholder="Masukkan email pelanggan"
+            required
+          />
+        </div>
+        <div class="form-group buttons">
+          <button type="reset" class="btn-reset">Reset</button>
+          <button type="button" id="save-btn" class="btn-submit">Simpan</button>
+        </div>
+      </form>
+      <section>
+        <h2>Data Pelanggan</h2>
+        <div class="order-list"></div>
+
+        <table id="order-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nama</th>
+              <th>Nomor Telepon</th>
+              <th>Alamat</th>
+              <th>Email</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="src/js/data.js" type="module"></script>
+    <script>
+      // Toggle menu visibility
+      document.querySelector(".burger").addEventListener("click", () => {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
